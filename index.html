@@ -173,7 +173,7 @@ function calculate() {
     }
 
     const msPorDia = 1000 * 60 * 60 * 24;
-    const usedDays = Math.ceil((end - start) / msPorDia) + 1;
+    const usedDays = Math.ceil((end - start) / msPorDia) + 0;
     const proportionalValue = ((planValue / 30) * usedDays).toFixed(2);
 
     document.getElementById("result").innerText =
@@ -183,3 +183,4 @@ function calculate() {
 
 </body>
 </html>
+
