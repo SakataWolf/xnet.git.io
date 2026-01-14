@@ -1,56 +1,96 @@
-# xnet.git.io
+# 🌐 xnet.git.io  
 ## 📱 Calculadora Proporcional de Planos (PWA)
 
-Uma **Progressive Web App (PWA)** desenvolvida para realizar o cálculo proporcional de planos mensais de forma **rápida, precisa e intuitiva**. Ideal para provedores, empresas de serviços recorrentes ou equipes comerciais que precisam calcular valores proporcionais entre datas de instalação e vencimento.
-
-O aplicativo possui **design futurista em tons de roxo**, interface responsiva e pode ser **instalado como aplicativo nativo** em dispositivos móveis e desktop, funcionando inclusive **offline**.
+<p align="center">
+  <img src="assets/calculadora-preview.png" alt="Preview da Calculadora Proporcional" width="360"><br>
+  <sub>Interface futurista em tons de roxo — rápida, responsiva e profissional</sub>
+</p>
 
 ---
 
-### 🚀 Funcionalidades
+### ✨ Visão Geral
 
-* Cálculo automático de valor proporcional baseado em dias utilizados
-* Suporte a múltiplos planos mensais (30 dias)
-* Interface moderna, responsiva e otimizada para toque
-* Funcionamento offline via Service Worker
-* Instalação como aplicativo (PWA)
-* Compatível com mobile, tablet e desktop
+A **Calculadora Proporcional de Planos** é uma **Progressive Web App (PWA)** desenvolvida para calcular valores proporcionais de planos mensais de forma **automática, precisa e intuitiva**.
+
+Projetada especialmente para **provedores de internet, empresas de serviços recorrentes e equipes comerciais**, a aplicação elimina cálculos manuais, reduz erros e agiliza o atendimento ao cliente.
+
+---
+
+### 🚀 Principais Funcionalidades
+
+✔️ Cálculo proporcional automático baseado nos dias utilizados  
+✔️ Suporte a múltiplos planos mensais (30 dias)  
+✔️ Interface moderna com design futurista (Glassmorphism)  
+✔️ Totalmente responsiva (mobile, tablet e desktop)  
+✔️ Funciona offline (Service Worker)  
+✔️ Instalação como aplicativo nativo (PWA)
+
+---
+
+### 🖼️ Interface
+
+- Design focado em **usabilidade**
+- Estética futurista em **tons de roxo**
+- Campos claros e fluxo simples
+- Ideal para uso rápido em atendimento comercial
 
 ---
 
 ### 🛠️ Tecnologias Utilizadas
 
-* **HTML5**
-* **CSS3 (Design futurista / Glassmorphism)**
-* **JavaScript (Vanilla)**
-* **Progressive Web App (PWA)**
-* **Service Worker**
-* **Web Manifest**
+- **HTML5**
+- **CSS3** (Glassmorphism / UI futurista)
+- **JavaScript Vanilla**
+- **Progressive Web App (PWA)**
+- **Service Worker**
+- **Web Manifest**
 
 ---
 
 ### 📦 Estrutura do Projeto
 
 ```
+
 /pwa-calculadora
- ├── index.html
- ├── manifest.json
- ├── service-worker.js
- ├── icon-192.png
- └── icon-512.png
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── manifest.json
+├── service-worker.js
+├── assets/
+│   └── calculadora-preview.png
+├── icon-192.png
+└── icon-512.png
+
 ```
 
 ---
 
-### 📲 Instalação
+### 📲 Instalação como App (PWA)
 
-1. Hospede o projeto em um servidor HTTPS
+1. Hospede o projeto em um servidor **HTTPS**
 2. Acesse pelo navegador (Chrome, Edge ou similares)
-3. Selecione **“Adicionar à tela inicial”**
-4. Utilize como um aplicativo nativo
+3. Clique em **“Adicionar à tela inicial”**
+4. Utilize como um aplicativo nativo, inclusive **offline**
 
 ---
 
 ### 🎯 Objetivo do Projeto
 
-Fornecer uma solução simples, leve e profissional para cálculo proporcional de cobranças, com foco em **usabilidade**, **design moderno** e **facilidade de distribuição** via PWA.
+Fornecer uma solução **simples, leve e profissional** para cálculo proporcional de cobranças, com foco em:
+
+- Experiência do usuário
+- Design moderno
+- Portabilidade
+- Uso comercial real
+
+Este projeto também faz parte do **portfólio de desenvolvimento web/PWA**, demonstrando boas práticas de UI, lógica de negócio e performance.
+
+---
+
+### 📄 Licença
+
+Este projeto é de uso livre para fins educacionais e comerciais internos.  
+Sinta-se à vontade para adaptar conforme sua necessidade.
