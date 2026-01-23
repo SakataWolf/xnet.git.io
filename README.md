@@ -47,27 +47,6 @@ Projetada especialmente para **provedores de internet, empresas de serviços rec
 
 ---
 
-### 📦 Estrutura do Projeto
-
-```
-
-/pwa-calculadora
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── manifest.json
-├── service-worker.js
-├── assets/
-│   └── calculadora-preview.png
-├── icon-192.png
-└── icon-512.png
-
-```
-
----
-
 ### 📲 Instalação como App (PWA)
 
 1. Hospede o projeto em um servidor **HTTPS**
