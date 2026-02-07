@@ -140,6 +140,13 @@ button {
 
 <body>
 
+<label>Tipo de Cálculo</label>
+<select id="calcType">
+    <option value="real">Calendário Real</option>
+    <option value="commercial">Mês Comercial (30 dias)</option>
+</select>
+
+    
 <div class="container">
     <h2>Calculadora Proporcional</h2>
 
@@ -165,11 +172,17 @@ Cálculo baseado em mês comercial (30 dias).
     <div id="result" class="result"></div>
 </div>
 
+    <small style="display:block; margin-top:10px; text-align:center; opacity:0.7;">
+Valores calculados conforme o tipo de mês selecionado.
+</small>
+
+
 <script>
 function calculate() {
     const startInput = document.getElementById("startDate").value;
     const endInput = document.getElementById("endDate").value;
     const planValue = parseFloat(document.getElementById("plan").value);
+    const calcType = document.getElementById("calcType").value;
 
     if (!startInput || !endInput) {
         document.getElementById("result").innerText = "Datas inválidas!";
@@ -180,40 +193,59 @@ function calculate() {
     const end = new Date(endInput);
 
     if (end <= start) {
-        document.getElementById("result").innerText = "A data final deve ser maior que a inicial!";
+        document.getElementById("result").innerText =
+            "A data de vencimento deve ser maior que a data de instalação.";
         return;
     }
 
-    // ===== CÁLCULO COMERCIAL (30 DIAS FIXOS) =====
-    let diaInicio = Math.min(start.getDate(), 30);
-    let diaFim = Math.min(end.getDate(), 30);
+    let usedDays = 0;
 
-    let mesInicio = start.getMonth() + 1;
-    let mesFim = end.getMonth() + 1;
+    // ======================
+    // CALENDÁRIO REAL
+    // ======================
+    if (calcType === "real") {
+        const msPorDia = 1000 * 60 * 60 * 24;
+        usedDays = Math.ceil((end - start) / msPorDia);
+    }
 
-    let anoInicio = start.getFullYear();
-    let anoFim = end.getFullYear();
+    // ======================
+    // MÊS COMERCIAL (30 DIAS)
+    // ======================
+    if (calcType === "commercial") {
+        let diaInicio = Math.min(start.getDate(), 30);
+        let diaFim = Math.min(end.getDate(), 30);
 
-    const diasComerciais =
-        (anoFim - anoInicio) * 360 +
-        (mesFim - mesInicio) * 30 +
-        (diaFim - diaInicio);
+        let mesInicio = start.getMonth() + 1;
+        let mesFim = end.getMonth() + 1;
 
-    if (diasComerciais <= 0) {
+        let anoInicio = start.getFullYear();
+        let anoFim = end.getFullYear();
+
+        usedDays =
+            (anoFim - anoInicio) * 360 +
+            (mesFim - mesInicio) * 30 +
+            (diaFim - diaInicio);
+    }
+
+    if (usedDays <= 0) {
         document.getElementById("result").innerText = "Período inválido para cálculo.";
         return;
     }
 
-    const valorProporcional = ((planValue / 30) * diasComerciais).toFixed(2);
+    const proportionalValue = ((planValue / 30) * usedDays).toFixed(2);
 
     document.getElementById("result").innerText =
-        `Dias considerados (mês comercial): ${diasComerciais}\nValor proporcional: R$ ${valorProporcional}`;
+        `Tipo de cálculo: ${calcType === "real" ? "Calendário Real" : "Mês Comercial (30 dias)"}\n` +
+        `Dias considerados: ${usedDays}\n` +
+        `Valor proporcional: R$ ${proportionalValue}`;
 }
 </script>
 
 
+
 </body>
 </html>
+
 
 
 
